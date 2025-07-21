@@ -1,0 +1,9 @@
+CREATE TABLE batch89.orders (
+    order_id VARCHAR(20) PRIMARY KEY,
+    user_id VARCHAR(20) NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    payment_method VARCHAR(20) NOT NULL,
+    status VARCHAR(20) DEFAULT 'pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
