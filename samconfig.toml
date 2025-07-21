@@ -5,6 +5,7 @@ version = 0.1
 [default]
 [default.global.parameters]
 stack_name = "ETLOrchestration89"
+region = "us-east-1"
 
 [default.build.parameters]
 cached = true
