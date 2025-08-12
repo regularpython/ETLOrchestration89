@@ -1,37 +1,23 @@
 import json
 
-from sqlalchemy import text
+from src.framework.etl_engine import Engine
+from src.framework.workflow.workflow_service import Workflow
+from src.mappers.orm_registry import run_mappers
+from src.services.inventory_reserved_service import InventoryReservedEventService
+from src.services.order_service import OrderService
+run_mappers()
 
-from src.source.Database.database_connection import engine
-
-
-# import requests
+work = Workflow()
+work.register_service(InventoryReservedEventService(service_name="Inventory Reserved Event", description="This stores inventory into database"))
+work.register_service(OrderService(service_name="Order Event", description="This stores inventory into database"))
+engine = Engine(work)
 
 
 def lambda_handler(event, context):
-    print(event)
-    data = json.loads(event['Records'][0]['body'])
-
-    order_id = '12345'
-    user_id = '1111'
-    total_amount = '250'
-    payment_method = 'Online'
-    status = 'Success'
-
-    insert_query = text("""
-                    INSERT INTO batch89.orders (order_id, user_id, total_amount, payment_method, status)
-                    VALUES (:order_id, :user_id, :total_amount, :payment_method, :status);
-                """)
-    with engine.connect() as connection:
-        connection.execute(insert_query, {"order_id": order_id, "user_id": user_id,
-                                          "total_amount": total_amount, "payment_method": payment_method,
-                                          "status": status})
-        connection.commit()
-
+    engine.execute(event)
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "hello world",
-            "Data": data
+            "message": "hello world"
         }),
     }

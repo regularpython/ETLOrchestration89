@@ -17,7 +17,7 @@ def get_db_connection():
 
 
 # Create an engine and initialize the database
-engine = create_engine(get_db_connection(), pool_size=10, max_overflow=5, echo=False)  # Use appropriate database URL
+engine = create_engine(get_db_connection(), pool_size=10, max_overflow=5, echo=True)  # Use appropriate database URL
 
 
 # Set up the session factory
