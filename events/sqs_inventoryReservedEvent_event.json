@@ -3,7 +3,7 @@
     {
       "messageId": "d48204c7-e18d-4cdf-91b7-617b05130863",
       "receiptHandle": "AQEBWEJeXjSZUr6WZrX9RojQkkC3l0UIziONTecxfQF4PxSr/7AdBhLQ+Fyq6zZ4NofxFwPqf8QkIh1lQnWJSfQMah5fTwrs6OpYTSGu1S2zS8YYA6BE2t2c1iTErlt20skDA7lwaZxwHT3cKi4obhLX2hYPDuxPRs9BLn8v/0WO7py88i9HbwbAmRf3ltx4DW0DJJLgoBvBOavCCD4iqeC9BmMpC9mlzRrtGBbeVRWn+GLE5P9slhMDLWuouAsBUzvyvUlR0vFfeuDhe/dGt8E6MUMXnzar4ygVHzIDUDXW6JKjE0tHbtMvI/gfkpkN0PY0GUeJjr2BDSFTKcyQN4RbVPS1U39l14XLqcX+kKP8cFJyXUvaTz5RyWnJ1nsb580V",
-      "body": "{\n  \"header\": {\n    \"eventName\": \"inventoryReservedEvent\",\n    \"publisher\": \"inventory-service\",\n    \"organizationId\": \"eCommRetail\",\n    \"source\": \"inventory.reservation.handler\",\n    \"timestamp\": \"2025-07-19T13:12:00Z\"\n  },\n  \"body\": {\n    \"order_id\": \"test-v1\",\n    \"reserved_items\": [\n      {\"sku\": \"SKU123\", \"status\": \"reserved\"},\n      {\"sku\": \"SKU987\", \"status\": \"reserved\"}\n    ]\n  }\n}\n",
+      "body": "{\n  \"header\": {\n    \"eventName\": \"inventoryReservedEvent\",\n    \"publisher\": \"inventory-service\",\n    \"organizationId\": \"eCommRetail\",\n    \"source\": \"inventory.reservation.handler\",\n    \"timestamp\": \"2025-07-19T13:12:00Z\"\n  },\n  \"body\": {\n    \"order_id\": \"service orm test\",\n    \"reserved_items\": [\n      {\"sku\": \"SKU123\", \"quantity\": \"2\"},\n      {\"sku\": \"SKU987\", \"quantity\": \"3\"}\n    ]\n  }\n}",
       "attributes": {
         "ApproximateReceiveCount": "1",
         "SentTimestamp": "1753154290197",
