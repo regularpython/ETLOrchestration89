@@ -33,7 +33,7 @@ class InventoryReservedEventService(ETLOrchestratorBase):
         order_id = self.inventory_data.body.order_id
         items = self.inventory_data.body.reserved_items
         for item in items:
-            data = InventoryModel(order_id=order_id, sku=item.sku, status=item.status)
+            data = InventoryModel(order_id=order_id, sku=item.sku, quantity=item.quantity)
             repo.insert(data)
 
     def send_to_sqs(self):

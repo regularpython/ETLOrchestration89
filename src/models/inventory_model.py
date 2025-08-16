@@ -9,4 +9,4 @@ class InventoryModel:
     id: Optional[int] = None
     order_id: Optional[str] = None
     sku: str = ""
-    status: str = ""
+    quantity: int = ""

@@ -11,5 +11,5 @@ inventory_table = Table(
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("order_id", String(20), nullable=True),
     Column("sku", String(20), nullable=False),
-    Column("status", String(45), nullable=False),
+    Column("quantity", String(45), nullable=False),
 )
