@@ -5,7 +5,7 @@ from typing import List
 
 class Items(BaseModel):
     sku: str
-    status: str
+    quantity: str
 
 
 class InventoryReservedHeader(BaseModel):
