@@ -1,7 +1,13 @@
 
-rds_access_protocol = 'mysql+mysqlconnector'
-rds_username = 'admin'
-rds_password = 'Sairam123456789'
-rds_host = 'database-1.cb6myg0y0nlx.us-east-1.rds.amazonaws.com'
-rds_port = '3306'
-rds_db_name = 'batch89'
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+rds_access_protocol = os.getenv("RDS_ACCESS_PROTOCOL")
+rds_username = os.getenv("RDS_USERNAME")
+rds_password = os.getenv("RDS_PASSWORD")
+rds_host = os.getenv("RDS_HOST")
+rds_port = os.getenv("RDS_PORT")
+rds_db_name = os.getenv("RDS_DB_NAME")
+print(rds_access_protocol)
